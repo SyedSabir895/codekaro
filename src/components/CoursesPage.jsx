@@ -63,7 +63,7 @@ function CoursesPage() {
   };
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-r from-green-500 to-blue-500 px-4 py-10">
+    <div className="w-full min-h-screen bg-gradient-to-r] px-4 py-10">
       <div className="flex flex-col items-center justify-start space-y-12">
         
         {/* Beginner Courses - Horizontal Layout */}

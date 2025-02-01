@@ -1,36 +1,53 @@
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 function SkillLevelSelector() {
   const navigate = useNavigate();
 
   return (
-<div className="px-4 w-full h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500 min-h-[100vh]">
-<h1 className="text-white text-3xl font-bold mb-4">Select Your Skill Level</h1>
-<div className="flex gap-4">
-<button 
-          className="bg-blue-600 text-white px-6 py- rounded-lg cursor pointer"
-          onClick={() => navigate('/beginner')} 
-        >
-          Beginner
-        </button>
-        <button 
-          onClick={() => navigate('/intermediate')} 
-          className="bg-green-600 text-white px-6 py-3 rounded-lg"
-        >
-          Intermediate
-        </button>
-        <button 
-          onClick={() => navigate('/expert')} 
-          className="bg-red-600 text-white px-6 py-3 rounded-lg"
-        >
-          Expert
-        </button>
-        {/*<button 
-          onClick={() => navigate('/courses')}
-        >
-        </button>*/}
+    <div className="relative w-full h-screen flex flex-col items-center justify-center bg-blue-500 overflow-hidden">
+      
+      {/* Animated Background */}
+      <div className="absolute inset-0 bg-blue"></div>
 
-      </div>
+      {/* Glassmorphism Card */}
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="relative z-10 p-8 rounded-2xl backdrop-blur-md bg-white/10 shadow-lg border border-white/20 text-center max-w-sm"
+      >
+        <h1 className="text-white text-4xl font-bold mb-6 bg-green">Select Your Skill Level</h1>
+
+        <div className="flex flex-col gap-6">
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-blue-500 text-white px-8 py-3 rounded-lg text-lg font-semibold shadow-md cursor-pointer"
+            onClick={() => navigate('/beginner')} 
+          >
+            Beginner 🚀
+          </motion.button>
+
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-green-500 text-white px-8 py-3 rounded-lg text-lg font-semibold shadow-md cursor-pointer"
+            onClick={() => navigate('/intermediate')} 
+          >
+            Intermediate 🌟
+          </motion.button>
+
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-red-500 text-white px-8 py-3 rounded-lg text-lg font-semibold shadow-md cursor-pointer"
+            onClick={() => navigate('/expert')} 
+          >
+            Expert 🔥
+          </motion.button>
+        </div>
+      </motion.div>
     </div>
   );
 }

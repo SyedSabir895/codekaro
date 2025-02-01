@@ -2,14 +2,18 @@ import { Routes, Route } from "react-router-dom";
 import SkillLevelSelector from "./components/SkillLevelSelector";
 import LanguageRecommendations from "./components/LanguageRecommendations";
 import Navbar from "./components/Navbar";
-import PlaylistSuggestions from "./components/PlaylistSuggestions";
 import CoursesPage from "./components/CoursesPage";
+import AuthPage from "./pages/AuthPage";
+import DashBoard from "./components/DashBoard";
+import CodingQuizGame from "./components/Games";
+import AboutUs from "./components/About";
+import Compiler from "./components/Compiler";
 
 function App() {
   return (
-    <>
+    <div className="min-h-screen flex flex-col space-y-3">
       <Navbar />
-      <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center text-center py-8 h-full w-full">
+      <div className="flex-1 bg-gradient-to-r from-blue-500 to-purple-600 flex flex-col items-center justify-center text-center w-full pt-16">
         <Routes>
           <Route path="/" element={<SkillLevelSelector />} />
           <Route
@@ -17,7 +21,6 @@ function App() {
             element={
               <>
                 <LanguageRecommendations skillLevel="beginner" />
-                <PlaylistSuggestions skillLevel="beginner" />
               </>
             }
           />
@@ -26,7 +29,6 @@ function App() {
             element={
               <>
                 <LanguageRecommendations skillLevel="intermediate" />
-                <PlaylistSuggestions skillLevel="intermediate" />
               </>
             }
           />
@@ -35,14 +37,18 @@ function App() {
             element={
               <>
                 <LanguageRecommendations skillLevel="expert" />
-                <PlaylistSuggestions skillLevel="expert" />
               </>
             }
           />
           <Route path="/courses" element={<CoursesPage />} />
+          <Route path="/create-account" element={<AuthPage/>}/>
+          <Route path="/dashboard" element={<DashBoard/>}/>
+          <Route path="/games" element={<CodingQuizGame/>}/>
+          <Route path="/about" element={<AboutUs/>}/>
+          <Route path="/compiler" element={<Compiler/>}/>
         </Routes>
       </div>
-    </>
+    </div>
   );
 }
 

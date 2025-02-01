@@ -5,7 +5,7 @@ import { PlayCircle } from "lucide-react"; // Play icon
 const playlists = {
   Python: "https://youtu.be/ix9cRaBkVe0?si=3_VKDERvatujjcqK",
   JavaScript: "https://youtu.be/lfmg-EJ8gm4?si=EJa3Z3UXgJINy5Ub",
-  Scratch: "https://www.youtube.com/watch?v=rfscVS0vtbw",
+  HTML: "https://youtu.be/G3e-cpL7ofc?si=qygtzBuiyiJ9gOlV",
   Java: "https://www.youtube.com/watch?v=9n4fczZ0_ak",
   Cpp: "https://www.youtube.com/watch?v=oPpnCh7InLY",
   Swift: "https://www.youtube.com/watch?v=2EX2mAL_W9c",
