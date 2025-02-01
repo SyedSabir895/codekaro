@@ -234,7 +234,6 @@ const CodingQuizGame = () => {
       </button>
     </div>
   );
-
   const renderContent = () => {
     switch (gameState) {
       case 'menu':
